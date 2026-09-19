@@ -41,9 +41,13 @@ export default async function HomePage() {
           >
             <div className="w-16 h-16 shrink-0 rounded overflow-hidden bg-zinc-100">
               <img
-                src={post.imageUrl}
+                src={post.imageUrl.replace(/w=\d+/, "w=160")}
                 alt={post.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
+                width={64}
+                height={64}
               />
             </div>
             <div className="flex-1 min-w-0">
@@ -69,6 +73,8 @@ export default async function HomePage() {
               src={heroPost.imageUrl}
               alt={heroPost.title}
               className="w-full h-full object-cover opacity-95 group-hover:scale-102 transition-transform duration-700 ease-out"
+              fetchPriority="high"
+              decoding="async"
             />
             {/* Live Updates Badge */}
             <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-rose-600 shadow">
@@ -166,6 +172,8 @@ export default async function HomePage() {
                   src={post.imageUrl}
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-4 flex flex-col flex-1">

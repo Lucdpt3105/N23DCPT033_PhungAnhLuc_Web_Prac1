@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local agent customizations and skills
+.agents/
+
+# reference mockups in root
+/*.png
+!screenshots/
+!screenshots/**
+
